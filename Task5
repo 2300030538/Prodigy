@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ConnectHub Mockup</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6f8;
+    }
+    .container {
+      display: flex;
+    }
+    .sidebar, .rightbar {
+      width: 250px;
+      background: #fff;
+      padding: 20px;
+      height: 100vh;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      overflow-y: auto;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 80px;
+    }
+    .profile h3 {
+      margin: 10px 0 5px;
+    }
+    .menu a {
+      display: block;
+      margin: 10px 0;
+      color: #333;
+      text-decoration: none;
+    }
+    .post, .trending, .suggested {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    }
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .story {
+      text-align: center;
+      margin-right: 15px;
+    }
+    .story img {
+      border-radius: 50%;
+      border: 3px solid #ff5c5c;
+      width: 60px;
+      height: 60px;
+    }
+    .hashtags span {
+      background: #e0ecff;
+      padding: 4px 8px;
+      border-radius: 5px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+    .comment {
+      background: #f0f0f0;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .post img.post-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .suggested button {
+      margin-top: 5px;
+      padding: 4px 10px;
+      background: #0084ff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Left Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile">
+      <h3>Alex Morgan</h3>
+      <p>@alexmorgan</p>
+      <p>248 Posts<br>1,432 Followers<br>567 Following</p>
+    </div>
+    <div class="menu">
+      <a href="#">Profile</a>
+      <a href="#">Saved Posts</a>
+      <a href="#">Settings</a>
+      <a href="#">Help Center</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Post input -->
+    <div class="post">
+      <input type="text" placeholder="What's on your mind?" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+      <button style="margin-top: 10px; padding: 8px 15px;">Post</button>
+    </div>
+
+    <!-- Stories -->
+    <div class="stories">
+      <div class="story"><img src="https://randomuser.me/api/portraits/women/44.jpg" /><p style="font-size: 12px;">You</p></div>
+      <div class="story"><img src="https://randomuser.me/api/portraits/women/65.jpg" /><p style="font-size: 12px;">Emma</p></div>
+      <div class="story"><img src="https://randomuser.me/api/portraits/men/43.jpg" /><p style="font-size: 12px;">James</p></div>
+      <div class="story"><img src="https://randomuser.me/api/portraits/women/21.jpg" /><p style="font-size: 12px;">Sophia</p></div>
+    </div>
+
+    <!-- Posts -->
+    <div class="post">
+      <p><strong>Alex Morgan</strong><br>Just hiked to the top of Mount Rainier! The view was absolutely breathtaking.</p>
+      <img class="post-image" src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=900&q=60" alt="Mountains">
+      <div class="hashtags">
+        <span>#Hiking</span><span>#Adventure</span><span>#NatureLovers</span>
+      </div>
+      <p>❤️ 243 💬 42 🔄 Share</p>
+      <div class="comment"><strong>Sophia Chen:</strong> Wow! That looks amazing! I need to add this to my bucket list.</div>
+    </div>
+
+    <div class="post">
+      <p><strong>Emma Wilson</strong><br>Just finished this amazing book! Highly recommend it to everyone who loves mystery novels.</p>
+      <img class="post-image" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=60" alt="Books">
+      <div class="hashtags">
+        <span>#BookLovers</span><span>#WeekendReads</span>
+      </div>
+      <p>❤️ 127 💬 24 🔄 Share</p>
+      <div class="comment"><strong>James Thompson:</strong> I just finished that one too! The ending was such a surprise!</div>
+    </div>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="rightbar">
+    <div class="trending">
+      <h3>Trending Topics</h3>
+      <p>#TechNews</p>
+      <p>#TravelTips</p>
+      <p>#FoodieFinds</p>
+      <p>#FitnessFriday</p>
+      <p>#WeekendVibes</p>
+    </div>
+
+    <div class="suggested">
+      <h3>Suggested Friends</h3>
+      <p>
+        <img src="https://randomuser.me/api/portraits/men/71.jpg" width="30" style="border-radius: 50%; vertical-align: middle;"> Michael Brown<br>
+        <button>Follow</button>
+      </p>
+      <p>
+        <img src="https://randomuser.me/api/portraits/women/49.jpg" width="30" style="border-radius: 50%; vertical-align: middle;"> Olivia Martin<br>
+        <button>Follow</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
