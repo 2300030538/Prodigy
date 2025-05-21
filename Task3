@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comillas Negras</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+    header, footer {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+    }
+    header nav a, footer a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .hero {
+      background: linear-gradient(to right, #7b2cbf, #5a189a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+    }
+    .button {
+      background-color: white;
+      color: #7b2cbf;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .products {
+      padding: 40px 20px;
+    }
+    .products h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filters select {
+      padding: 10px;
+      margin: 0 10px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .card .category {
+      background-color: #e0bbff;
+      color: #5a189a;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      float: right;
+    }
+    .card h3 {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    .card p {
+      font-size: 0.9em;
+      color: #444;
+    }
+    .price {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .add-to-cart {
+      background-color: #8000ff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer div {
+      flex: 1 1 200px;
+    }
+    .newsletter input {
+      padding: 10px;
+      width: 50px;
+    }
+    .newsletter button {
+      background-color: #8000ff;
+      color: white;
+      padding: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>Comillas Negras</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Categories</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <span>Customer Support: (123) 456-7890</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Summer Collection 2023</h1>
+    <p>Discover our latest arrivals with up to 40% off on selected items.</p>
+    <button class="button">Shop Now</button>
+  </div>
+
+  <div class="products">
+    <h2>Our Products</h2>
+    <div class="filters">
+      <select>
+        <option>All Categories</option>
+      </select>
+      <select>
+        <option>Featured</option>
+      </select>
+    </div>
+    <div class="product-grid">
+      <div class="card">
+        <span class="category">clothing</span>
+        <h3>Classic White T-Shirt</h3>
+        <p>&#11088;&#11088;&#11088;&#11088;&#189; (24)</p>
+        <p>A comfortable classic white t-shirt made from 100% organic c...</p>
+        <p class="price">$24.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="card">
+        <span class="category">clothing</span>
+        <h3>Denim Jeans</h3>
+        <p>&#11088;&#11088;&#11088;&#11088; (18)</p>
+        <p>Classic blue denim jeans with a comfortable fit. Made from h...</p>
+        <p class="price">$59.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="card">
+        <span class="category">accessories</span>
+        <h3>Leather Wallet</h3>
+        <p>&#11088;&#11088;&#11088;&#11088;&#189; (32)</p>
+        <p>Genuine leather wallet with multiple card slots and a coin p...</p>
+        <p class="price">$34.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="card">
+        <span class="category">footwear</span>
+        <h3>Running Shoes</h3>
+        <p>&#11088;&#11088;&#11088;&#11088;&#189; (45)</p>
+        <p>Lightweight running shoes with excellent cushioning and supp...</p>
+        <p class="price">$89.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="card">
+        <span class="category">accessories</span>
+        <h3>Sunglasses</h3>
+        <p>&#11088;&#11088;&#11088;&#11088; (16)</p>
+        <p>Stylish sunglasses with UV protection. Lightweight frame and...</p>
+        <p class="price">$79.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="card">
+        <span class="category">footwear</span>
+        <h3>Casual Sneakers</h3>
+        <p>&#11088;&#11088;&#11088;&#11088; (28)</p>
+        <p>Comfortable casual sneakers perfect for everyday wear. Featu...</p>
+        <p class="price">$64.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Comillas Negras</h3>
+      <p>Your local store for quality products at affordable prices.</p>
+      <p>
+        <a href="#">&#xf09a;</a>
+        <a href="#">&#xf16d;</a>
+        <a href="#">&#xf16c;</a>
+      </p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Shop</a></p>
+      <p><a href="#">About Us</a></p>
+      <p><a href="#">Contact</a></p>
+    </div>
+    <div>
+      <h4>Customer Service</h4>
+      <p><a href="#">Order Tracking</a></p>
+      <p><a href="#">Returns & Exchanges</a></p>
+      <p><a href="#">Shipping Information</a></p>
+      <p><a href="#">FAQ</a></p>
+    </div>
+    <div class="newsletter">
+      <h4>Newsletter</h4>
+      <p>Subscribe to receive updates on new arrivals and special promotions.</p>
+      <input type="text" placeholder="Yc">
+      <button>Subscribe</button>
+    </div>
+  </footer>
+</body>
+</html>
