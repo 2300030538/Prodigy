@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login/Register UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #fbc2eb, #a6c1ee, #84fab0, #8fd3f4);
+      background-size: 800% 800%;
+      animation: gradientSlide 15s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientSlide {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      z-index: 1;
+      background: white;
+      border-radius: 16px;
+      width: 420px;
+      max-width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .tab.active {
+      border-bottom: 2px solid #3b82f6;
+      color: #2563eb;
+    }
+
+    .form-container {
+      padding: 30px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #6366f1, #2563eb);
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #4f46e5, #1d4ed8);
+    }
+
+    .icon-top {
+      font-size: 40px;
+      color: #3b82f6;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .eye-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .name-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .name-row input {
+      flex: 1;
+    }
+
+    .terms {
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .terms input {
+      margin-right: 6px;
+    }
+
+    .terms a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('login')">🔐 Login</div>
+      <div class="tab" onclick="switchTab('register')">👤 Register</div>
+    </div>
+    <div class="form-container" id="form-area">
+      <div style="text-align:center">
+        <div class="icon-top">🔐</div>
+        <h2>Welcome back</h2>
+        <p>Sign in to your account</p>
+      </div>
+      <form>
+        <input type="email" placeholder="your@email.com" required />
+        <div class="input-group">
+          <input type="password" placeholder="Password" id="password" required />
+          <span class="eye-toggle" onclick="togglePassword('password')">👁️</span>
+        </div>
+        <div class="form-actions">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button class="btn" type="submit">🔐 Sign in</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const formArea = document.getElementById('form-area');
+
+    function switchTab(tab) {
+      tabs.forEach(t => t.classList.remove('active'));
+      if (tab === 'login') {
+        tabs[0].classList.add('active');
+        formArea.innerHTML = `
+          <div style="text-align:center">
+            <div class="icon-top">🔐</div>
+            <h2>Welcome back</h2>
+            <p>Sign in to your account</p>
+          </div>
+          <form>
+            <input type="email" placeholder="your@email.com" required />
+            <div class="input-group">
+              <input type="password" placeholder="Password" id="password" required />
+              <span class="eye-toggle" onclick="togglePassword('password')">👁️</span>
+            </div>
+            <div class="form-actions">
+              <label><input type="checkbox" /> Remember me</label>
+              <a href="#">Forgot password?</a>
+            </div>
+            <button class="btn" type="submit">🔐 Sign in</button>
+          </form>
+        `;
+      } else {
+        tabs[1].classList.add('active');
+        formArea.innerHTML = `
+          <div style="text-align:center">
+            <div class="icon-top">👤</div>
+            <h2>Create an account</h2>
+            <p>Join us today</p>
+          </div>
+          <form>
+            <div class="name-row">
+              <input type="text" placeholder="First name" required />
+              <input type="text" placeholder="Last name" required />
+            </div>
+            <input type="email" placeholder="your@email.com" required />
+            <div class="input-group">
+              <input type="password" placeholder="Password" id="reg-password" required />
+              <span class="eye-toggle" onclick="togglePassword('reg-password')">👁️</span>
+            </div>
+            <small>Password must be at least 8 characters long</small>
+            <input type="password" placeholder="Confirm password" required />
+            <div class="terms">
+              <label><input type="checkbox" required /> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+            <button class="btn" type="submit">👤 Create account</button>
+          </form>
+        `;
+      }
+    }
+
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    }
+  </script>
+</body>
+</html>
